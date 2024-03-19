@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #1D1D1D;
+    font-style: normal;
+    line-height: 23.8px;
+    text-align: left;
+    background-color: #F3F6FB;
+}
+
+.nav{
+    color: green;
+}
+
+#main-header{
+    font-style: italic;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+ul{
+    width: 30%;
+    height: 30%;
+    color: green;
+    font-family: monospace;
+    margin: 10px;
+    border: 1px solid green;
+    background-color:beige;
+    padding: 10px 30px 10px 40px ;
+}
+ul li{
+    padding-left: 5px;
+    list-style-type:circle;
+}
+
+
+
+ol{
+    width: 30%;
+    height: 30%;
+    color: green;
+    font-family: monospace;
+    margin: 10px;
+    border: 1px solid green;
+    background-color:beige;
+    padding: 10px 30px 10px 40px ;
+}
+
+
+
+dl{
+    width: 60%;
+    height: 60%;
+    color: green;
+    font-family: monospace;
+    margin-left: 240px;
+    border: 1px solid green;
+    background-color:beige;
+    padding: 30px;
+}
+dt{
+    color: blue;
+}
+dd{
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+
+
+table,td,th{
+    border: 1px solid #1D1D1D;
+    border-collapse: collapse;
+}
+table{
+    width: 90%;
+    height: 70%;
+    color: gray;
+    margin: 10px 0px 30px 70px ;
+    background-color: beige;
+}
+td{
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+}
+th{
+    color: #1D1D1D;
+    padding: 10px;
+}
