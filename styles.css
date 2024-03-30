@@ -10,9 +10,20 @@ body{
     background-color: #F3F6FB;
 }
 
-.nav{
+
+.nav a{
     color: green;
 }
+
+#aboutHeader+p{
+    color: palevioletred;
+}
+
+td>a{
+    color: orange;
+}
+
+
 
 #main-header{
     font-style: italic;
@@ -91,4 +102,8 @@ td{
 th{
     color: #1D1D1D;
     padding: 10px;
+}
+
+.row-white>td{
+    background-color: white;
 }
