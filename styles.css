@@ -10,18 +10,69 @@ body{
     background-color: #F3F6FB;
 }
 
-
 .nav a{
-    color: green;
+    margin-right: 10px;
 }
 
-#aboutHeader+p{
-    color: palevioletred;
+
+
+
+
+/* lab5 */
+a:link{
+    color: black;
+}
+a:visited{
+    color:gray;
+}
+a:active{
+    color:yellow;
+}
+a:hover{
+    color:rgb(128, 128, 251);
+}
+span{
+    color: blue;
+    font-style: italic;
+    font-weight: bold;
+}
+.projects div{
+    float: right;
+    width: 30%;
+    margin-right: 0.3em;
+  
+}
+div.projects{
+    width: 90%;
+    position: relative;
+    left: 0.25em;
+}
+#aboutHeader{
+    clear: right;
+}
+.see-more{
+    clear: right;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+p{
+    text-indent: 1em;
+}
+p:first-child{
+    text-indent: 0;
+}
+.projects p{
+    text-indent: 0;
+}
+.see-more a:after{
+    content: " →";
+}
+dt:before{
+    content:"✨";
 }
 
-td>a{
-    color: orange;
-}
+
+
 
 
 
@@ -35,11 +86,9 @@ td>a{
 ul{
     width: 30%;
     height: 30%;
-    color: green;
+    color: blue;
     font-family: monospace;
     margin: 10px;
-    border: 1px solid green;
-    background-color:beige;
     padding: 10px 30px 10px 40px ;
 }
 ul li{
@@ -52,11 +101,9 @@ ul li{
 ol{
     width: 30%;
     height: 30%;
-    color: green;
+    color: blue;
     font-family: monospace;
     margin: 10px;
-    border: 1px solid green;
-    background-color:beige;
     padding: 10px 30px 10px 40px ;
 }
 
@@ -65,18 +112,15 @@ ol{
 dl{
     width: 60%;
     height: 60%;
-    color: green;
     font-family: monospace;
     margin-left: 240px;
-    border: 1px solid green;
-    background-color:beige;
     padding: 30px;
 }
 dt{
     color: blue;
 }
 dd{
-    color: gray;
+    color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
 }
