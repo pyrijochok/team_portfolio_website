@@ -15,9 +15,11 @@
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
     </div>
-   
+   <div>
     <p style="font-size: 18px;">Welcome to <span>TechHive Team Portfolio Website</span>, where innovation and design excellence converge.
-     We are dedicated to crafting seamless and intuitive user experiences through a blend of artistic flair and technical expertise. Explore our diverse projects showcasing captivating interfaces and interactive user journeys grounded in thorough research for a truly user-centric approach.</p></font>
+        We are dedicated to crafting seamless and intuitive user experiences through a blend of artistic flair and technical expertise. Explore our diverse projects showcasing captivating interfaces and interactive user journeys grounded in thorough research for a truly user-centric approach.</p>
+   </div>
+  
    <br>
     <h2>Portfolio</h2>
         <div class="projects">
@@ -44,12 +46,15 @@
 <div class="see-more">
     <a href="portfolio.html#works" target="_blank"  >See more works</a>
 </div>
-        <h2 id="aboutHeader">About Us</h2>
-        <p>Our design philosophy revolves around the relentless pursuit of perfection. We believe great design not only captivates visually but also enhances functionality and user satisfaction. With a commitment to elevating digital experiences, our UI/UX Team is ready to bring your vision to life. Join us on this visual voyage where innovation meets elegance, and let our design solutions redefine and elevate your digital presence.</p>
-        <h3>Services</h3>
+<button onclick="changeLoc()">Our Dribble</button>
+
+
+<h2 id="aboutHeader">About Us</h2>
+<p>Our design philosophy revolves around the relentless pursuit of perfection. We believe great design not only captivates visually but also enhances functionality and user satisfaction. With a commitment to elevating digital experiences, our UI/UX Team is ready to bring your vision to life. Join us on this visual voyage where innovation meets elegance, and let our design solutions redefine and elevate your digital presence.</p>
+<h3>Services</h3>
     
   
-    <dl>
+<dl>
         <dt>UX/UI Design</dt>
         <dd>Our UX/UI Design service is the cornerstone of creating exceptional digital experiences. From wireframes to high-fidelity prototypes, our team is dedicated to crafting interfaces that seamlessly blend aesthetics with user-centric functionality. </dd>
         <dt>Branding</dt>
@@ -60,17 +65,17 @@
         <dd>Unlock the full potential of your digital presence with our Marketing service. Whether it's SEO, social media, or content marketing, our team is committed to driving visibility, engagement, and conversions.</dd>
         <dt>Support</dt>
         <dd>Our Support service ensures that your digital assets are not only well-crafted but also maintained for optimal performance.We understand the importance of a seamless and reliable digital presence, and our support services are tailored to keep your digital assets running smoothly.</dd>
-    </dl>
-    <h3>Our Design Process in Four Steps</h3>
-    <ol>
+</dl>
+<h3>Our Design Process in Four Steps</h3>
+<ol>
         <li>Client Brief</li>
         <li>Analytics and Prototyping</li>
         <li>Design</li>
         <li>Launching</li>
         <li>Support</li>
-    </ol>
-    <h3>Tools we use as UI/UX Designers</h3>
-    <ul>
+</ol>
+<h3>Tools we use as UI/UX Designers</h3>
+<ul>
         <li>Figma</li>
         <li>Adobe XD</li>
         <li>Illustrator</li>
@@ -78,16 +83,31 @@
         <li>Notion</li>
         <li>Asana</li>
         <li>Marvel</li>
-    </ul>
+</ul>
     
-    <div class="see-more">
+<div class="see-more">
         <a href="about.html" target="_blank">Read more</a>
-    </div>
+</div>
+
+    <button onclick="dialog()">Rate us</button>
+    <button onclick="compareStrings()">Play a game</button>
+    <button onclick="showPageAuthor('Токарська', 'Аліна', position = 'веб-розробник')">Show author info</button>
 
     <h2>Follow Us</h2>
     <a href="https://www.google.com.ua/?hl=uk">Instagram</a>
     <a href="https://www.google.com.ua/?hl=uk">Facebook</a>
     <a href="https://www.google.com.ua/?hl=uk">YouTube</a>
+
     
+    <script>
+            let name = prompt("What is your name?","name")
+            alert("Welcome to our site,"+name);
+            let answer = confirm("Are you interested in UI/UX design?")
+
+            document.body.style.background ="white";
+            setTimeout(()=>document.body.style.background ="",30000)
+    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
