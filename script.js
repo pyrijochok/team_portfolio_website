@@ -1,73 +1,117 @@
-function dialog(){
-        let questions = [
-            "Do you like our portfolio?",
-            "Are you going to tell your friends about us?",
-            "Did you find everithing essential on our site?"
-        ];
-    
-        let totalScore = 0;
-    
-        for (let i = 0; i < questions.length; i++) {
-            let answer;
-            let isValidAnswer = false;
-            while (!isValidAnswer) {
-                answer = prompt(questions[i]);
-               
-                if (answer.toLowerCase() == "yes"||answer.toLowerCase() == "no" ) {
-                    isValidAnswer = true;
-                } else {
-                    alert("Answer must be yes or no.");
-                }
-            }
-    
-            if (i === 0 && answer.toLowerCase() === "yes") {
-                totalScore += 10;
-            } else if (i === 1 && answer.toLowerCase() === "yes") {
-                totalScore += 20;
-            } else if (i === 2 && answer.toLowerCase() === "yes") {
-                totalScore += 15;
-            }
-        }
-    
-        let feedback = "";
-        if (totalScore >= 25) {
-            feedback = "Thanks for your high rate!";
-        } else if (totalScore >= 10) {
-            feedback = "We are happy that you love our portfolio!";
-        } else {
-            feedback = "Thanks for your rate!";
-        }
-    
-        alert(feedback);
-    
-}
-
-
-function showPageAuthor(lastName, firstName, position = "web-developer"){
-    alert("Інформація про автора сторінки:\n" +
-          "Прізвище: " + lastName + "\n" +
-          "Ім'я: " + firstName + "\n" +
-          "Посада: " + position);
-}
-
-
-function compareStrings(){
-    str1 = prompt("Input first string: ");
-    str2 = prompt("Input second string: ");
-    let feedback = "Bigger string is: ";
-    if (str1.length > str2.length) {
-        alert(feedback+str1);
-    } else if (str2.length > str1.length) {
-        alert(feedback+str2);
-        return str2;
-    } else {
-        alert("Strings are equal.");
+const toBehance = document.querySelector("#toBehance");
+if(toBehance){
+    toBehance.onclick = ()=>{
+        location.href = "https://www.behance.net/"
     }
+    toBehance.addEventListener('mouseover',addShadow);
+    toBehance.removeEventListener('mouseover',addShadow);
+    toBehance.addEventListener('click',{
+        handleEvent(event){
+            setTimeout(alert(event.type+" on "+event.currentTarget),10000);
+        }
+    })
+}
+
+const projects = document.querySelectorAll(".projects div");
+if(projects){
+    projects.forEach((project)=>{
+        project.addEventListener("mouseover",addShadow); 
+        project.addEventListener("mouseover",makeBigger)}
+    );
+    projects.forEach((project)=>{
+        project.addEventListener("mouseout",removeShadow);
+        project.addEventListener("mouseout",normalState)
+    });
+}
+
+const tools = document.querySelector("#tools");
+if (tools){
+    tools.onclick = (event)=>{
+        let target = event.target;
+        if(target.tagName != 'LI'){
+            return;
+        }
+        highlight(target);
+    }
+    function highlight(li){
+        if(li.classList.contains('highlight')){
+            li.classList.remove('highlight')
+        }
+        else{
+            li.classList.add('highlight')
+        }
+    }
+}
+
+
+const commentsmenu = document.querySelector("#commentsMenu")
+if(commentsmenu){
+    class commentsMenu {
+        constructor(elem) {
+        this._elem = elem;
+        elem.onclick = this.onClick.bind(this); // (*)
+        }
+        add(){
+            addComment();
+            commentId++;
+        }
+        edit(){
+            editComment()
+        }
+        delete(){
+            deleteComment()
+        }
+        onClick(event) {
+            let action = event.target.dataset.action;
+            if (action) {
+            this[action]();
+            }
+        }
+    }
+    new commentsMenu(commentsmenu);
+}
+
+
+document.addEventListener('click', function(event) {
+        if (event.target.dataset.counter != undefined) { 
+            event.target.value++;
+            if( event.target.value>10){
+                event.target.value = 1;
+            }
+        }
+    });
+
+document.addEventListener('click', function(event) {
+        let id = event.target.dataset.toggleId;
+        if (!id) return;
+        let elem = document.getElementById(id);
+        elem.hidden = !elem.hidden;
+    });
+
+function addShadow(){
+    this.style.boxShadow = "0px 0px 10px grey";
+}
+function removeShadow(){
+    this.style.boxShadow = "none";
+}
+function makeBigger(){
+    this.style.width = "30%";
+    this.style.paddingLeft = "16px"
+}
+function normalState(){
+    this.style.width = "29.3%";
+    this.style.paddingLeft = "7px"
 }
 
 function changeLoc(){
     location.href = "https://dribbble.com/";
 }
+
+
+
+
+
+
 
 function showMoreWorks(){
     const projectsDiv = document.createElement('div');
@@ -129,6 +173,7 @@ function showOnlyRecent(){
     loadedProjects.forEach(e=>e.remove());
 }
 
+// commentsMenu
 function addComment(){
     const commentText = prompt('Your comment:','comment');
     const comment = document.createElement('div');
@@ -163,5 +208,3 @@ function deleteComment(){
 
 let commentId = 1;
 
-document.body.style.background ="white";
-setTimeout(()=>document.body.style.background ="",30000)

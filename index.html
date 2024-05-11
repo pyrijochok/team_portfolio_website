@@ -16,7 +16,7 @@
         <a href="contact.html">Contact Us</a>
     </div>
    <div>
-    <p style="font-size: 18px;">Welcome to <span>TechHive Team Portfolio Website</span>, where innovation and design excellence converge.
+    <p>Welcome to <span>TechHive Team Portfolio Website</span>, where innovation and design excellence converge.
         We are dedicated to crafting seamless and intuitive user experiences through a blend of artistic flair and technical expertise. Explore our diverse projects showcasing captivating interfaces and interactive user journeys grounded in thorough research for a truly user-centric approach.</p>
    </div>
   
@@ -38,7 +38,7 @@
             <div>
                 <img src="img/Rectangle 11runningapp.png" alt="">
                 <h3>Running app</h3>
-                <p>This project is a testament to our commitment to health and well-being, offering features like real-time tracking, personalized training plans, and social connectivity. Whether you're a seasoned marathoner or just starting your fitness journey.</p>
+                <p>This project is a testament to our commitment to health and well-being, offering features like real-time tracking, personalized training plans, and social connectivity. Whether you're a seasoned marathoner or just...</p>
                 <a href="project.html">View project</a>
             </div>
     </div>
@@ -46,7 +46,9 @@
 <div class="see-more">
     <a href="portfolio.html#works" target="_blank"  >See more works</a>
 </div>
+
 <button onclick="changeLoc()">Our Dribble</button>
+<button id="toBehance">Our Behance</button>
 
 
 <h2 id="aboutHeader">About Us</h2>
@@ -75,7 +77,7 @@
         <li>Support</li>
 </ol>
 <h3>Tools we use as UI/UX Designers</h3>
-<ul>
+<ul id="tools">
         <li>Figma</li>
         <li>Adobe XD</li>
         <li>Illustrator</li>
@@ -89,24 +91,13 @@
         <a href="about.html" target="_blank">Read more</a>
 </div>
 
-    <button onclick="dialog()">Rate us</button>
-    <button onclick="compareStrings()">Play a game</button>
-    <button onclick="showPageAuthor('Токарська', 'Аліна', position = 'веб-розробник')">Show author info</button>
+  
 
     <h2>Follow Us</h2>
     <a href="https://www.google.com.ua/?hl=uk">Instagram</a>
     <a href="https://www.google.com.ua/?hl=uk">Facebook</a>
     <a href="https://www.google.com.ua/?hl=uk">YouTube</a>
 
-    
-    <script>
-            let name = prompt("What is your name?","name")
-            alert("Welcome to our site,"+name);
-            let answer = confirm("Are you interested in UI/UX design?")
-
-            document.body.style.background ="white";
-            setTimeout(()=>document.body.style.background ="",30000)
-    </script>
 
     <script src="script.js"></script>
 </body>

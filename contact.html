@@ -17,10 +17,19 @@
     </div>
     <p>Have a question, suggestion, or interested in collaborating? We'd love to hear from you! Our team is just an email away, ready to assist with any inquiries you may have. Feel free to reach out to us at techhive@gmail.com, and we'll get back to you promptly.</p>
     <p>Additionally, you can connect with us on social media for the latest updates and insights. Follow us on social media to stay in the loop and engage with our vibrant community. We appreciate your interest and look forward to connecting with you soon!</p>
-    <h3>Your comments</h3>
-    <button onclick="addComment();commentId++;">Leave a comment</button>
-    <button onclick="editComment()">Edit comment</button>
-    <button onclick="deleteComment()">Delete comment</button>
+    <button data-toggle-id="commentsSection">Show comments</button>
+    <div id="commentsSection" hidden>
+        <h3>Your comments</h3>
+        <div id="commentsMenu">
+            <button data-action = "add">Leave a comment</button>
+            <button data-action="edit">Edit comment</button>
+            <button data-action="delete">Delete comment</button>
+        </div>
+        <label for="count">Rate Us</label>
+        <input type="button" value="1" name="count" data-counter>
+    </div>
+   
     <script src="script.js"></script>
+    
 </body>
 </html>

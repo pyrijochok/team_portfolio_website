@@ -14,8 +14,10 @@ body{
     margin-right: 10px;
 }
 
-
-
+/* lab6 */
+.highlight{
+    color:brown;
+}
 
 
 /* lab5 */
@@ -38,8 +40,9 @@ span{
 }
 .projects div{
     
-    width: 30%;
+    width: 29.3%;
     margin-right: 0.3em;
+    padding: 7px;
   
 }
 div.projects{
