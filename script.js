@@ -1,3 +1,10 @@
+
+class EventHandler {
+        handleEvent(event){
+            setTimeout(alert(event.type+" on "+event.currentTarget),10000);
+        }
+    }
+
 const toBehance = document.querySelector("#toBehance");
 if(toBehance){
     toBehance.onclick = ()=>{
@@ -5,11 +12,9 @@ if(toBehance){
     }
     toBehance.addEventListener('mouseover',addShadow);
     toBehance.removeEventListener('mouseover',addShadow);
-    toBehance.addEventListener('click',{
-        handleEvent(event){
-            setTimeout(alert(event.type+" on "+event.currentTarget),10000);
-        }
-    })
+    toBehance.addEventListener('click',new EventHandler());
+   
+    
 }
 
 const projects = document.querySelectorAll(".projects div");
@@ -33,41 +38,42 @@ if (tools){
         }
         highlight(target);
     }
-    function highlight(li){
-        if(li.classList.contains('highlight')){
-            li.classList.remove('highlight')
-        }
-        else{
-            li.classList.add('highlight')
-        }
+}
+
+function highlight(li){
+    if(li.classList.contains('highlight')){
+        li.classList.remove('highlight')
+    }
+    else{
+        li.classList.add('highlight')
     }
 }
 
 
-const commentsmenu = document.querySelector("#commentsMenu")
-if(commentsmenu){
-    class commentsMenu {
-        constructor(elem) {
-        this._elem = elem;
-        elem.onclick = this.onClick.bind(this); // (*)
-        }
-        add(){
-            addComment();
-            commentId++;
-        }
-        edit(){
-            editComment()
-        }
-        delete(){
-            deleteComment()
-        }
-        onClick(event) {
-            let action = event.target.dataset.action;
-            if (action) {
-            this[action]();
-            }
+class commentsMenu {
+    constructor(elem) {
+    this._elem = elem;
+    elem.onclick = this.onClick.bind(this);
+    }
+    add(){
+        addComment();
+        commentId++;
+    }
+    edit(){
+        editComment()
+    }
+    delete(){
+        deleteComment()
+    }
+    onClick(event) {
+        let action = event.target.dataset.action;
+        if (action) {
+        this[action]();
         }
     }
+}
+const commentsmenu = document.querySelector("#commentsMenu")
+if(commentsmenu){
     new commentsMenu(commentsmenu);
 }
 
@@ -106,11 +112,6 @@ function normalState(){
 function changeLoc(){
     location.href = "https://dribbble.com/";
 }
-
-
-
-
-
 
 
 function showMoreWorks(){
@@ -207,4 +208,63 @@ function deleteComment(){
 }
 
 let commentId = 1;
+
+// lab8
+const pins = document.querySelectorAll(".pin")
+if(pins){
+    pins.forEach((pin)=>{
+        pin.onmousedown = (e)=>{
+            let shiftX = e.clientX - pin.getBoundingClientRect().left;
+            let shiftY = e.clientY - pin.getBoundingClientRect().top;
+            pin.style.position = 'absolute';
+            pin.style.zIndex = 1000;
+            pin.style.cursor = "grabbing"
+            document.body.append(pin);
+            moveAt(e.pageX,e.pageY);
+            function moveAt(pageX,pageY){
+                pin.style.left = pageX -shiftX + 'px';
+                pin.style.top = pageY -shiftY + 'px';
+            }
+            function onMouseMove(e){
+                moveAt(e.pageX,e.pageY)
+            }
+            document.addEventListener('mousemove',onMouseMove);
+            pin.onmouseup = ()=>{
+                document.removeEventListener('mousemove',onMouseMove);
+                pin.onmouseup = null;
+                pin.style.cursor = "grab"
+    
+            }
+            pin.ondragstart = ()=>{
+                return false;
+            }
+        }
+       
+    })
+}
+
+
+document.onmouseover = (e)=>{
+    if(e.target.tagName=='LI' && e.target.classList.contains("mover")){
+        
+        e.target.classList.add("highlight")
+    }
+    if(e.relatedTarget.tagName=='LI' && e.relatedTarget.classList.contains("mover")){
+        e.relatedTarget.classList.remove("highlight")
+    }
+    
+}
+
+const simpleLiH = document.querySelectorAll(".simpleh");
+simpleLiH.forEach((li)=>{
+    li.onmouseover = ()=>{
+        li.classList.add("highlight")
+    }
+    li.onmouseout = ()=>{
+        li.classList.remove("highlight")
+    }
+})
+
+
+
 

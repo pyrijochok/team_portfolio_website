@@ -14,9 +14,49 @@ body{
     margin-right: 10px;
 }
 
+/* lab8 */
+#pins{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.description{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-style: italic;
+    opacity: 70%;
+    color: blue;
+}
+.pin img{
+    width: 30px;
+    height: 30px;
+   
+   
+}
+.pin{
+    margin-right: 5px;
+    cursor: grab;
+    /* opacity: 70%; */
+}
+
+ol{
+    display: flex;
+}
+.mover-div{
+    margin-right: 60px;
+}
+.mover,.simpleh {
+    cursor: default;
+}
+
+
 /* lab6 */
 .highlight{
     color:brown;
+}
+
+#tools li{
+    cursor:pointer;
 }
 
 
